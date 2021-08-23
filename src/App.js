@@ -1,3 +1,4 @@
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import React, { Component } from 'react';
 import './app.css';
 import Customer from './components/customer';
@@ -42,20 +43,32 @@ class  App extends Component {
   render() {
     return (
       <div>
-        {
-          customer.map((customer) => {
-            return <Customer
-                    id={customer.id}
-                    image={customer.image}
-                    name={customer.name}
-                    birthday={customer.birthday }
-                    gender={customer.gender }
-                    job={customer.job }
-                  />
-          })
-        }
-      
-      
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>번호</TableCell>
+              <TableCell>이미지</TableCell>
+              <TableCell>이름</TableCell>
+              <TableCell>생년월일</TableCell>
+              <TableCell>성별</TableCell>
+              <TableCell>직업</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {
+              customer.map((customer) => {
+                return <Customer
+                        id={customer.id}
+                        image={customer.image}
+                        name={customer.name}
+                        birthday={customer.birthday }
+                        gender={customer.gender }
+                        job={customer.job }
+                      />
+              })
+            }
+          </TableBody>
+        </Table>
       </div>
     );
 }
