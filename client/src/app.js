@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './app.css';
 import Customer from './components/customer';
 import { withStyles } from '@material-ui/core/styles';
+import CustomerAdd from './components/customerAdd';
 
 const styles = (theme) => ({
   root: {
@@ -53,6 +54,7 @@ class App extends Component {
     const { classes } = this.props;
     console.log(this.state.customers);
     return (
+      <div>
       <Paper className={classes.root}>
         <Table className={classes.table}>
           <TableHead>
@@ -86,7 +88,9 @@ class App extends Component {
             }
           </TableBody>
           </Table>
-        </Paper>
+      </Paper>
+      <CustomerAdd />
+      </div>
     );
 }
 }
