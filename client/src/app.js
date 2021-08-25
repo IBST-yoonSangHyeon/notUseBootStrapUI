@@ -43,14 +43,14 @@ class App extends Component {
 
 
   componentDidMount() {
-    this.timer = setInterval(this.progress, 20);
+    //this.timer = setInterval(this.progress, 20);
     this.callApi()
       .then(res => this.setState({ customers: res }))
       .catch(err => console.log(err));
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer)
+    //clearInterval(this.timer)
   }
 
   callApi = async () => {
